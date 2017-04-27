@@ -183,10 +183,8 @@ import csv
 import os
 print('Making classifier for training set')
 classdict = [(training_tags),(training)]#It is to be of
-train_classifier = CNNEmbeddedVecClassifier(classdict,maxlen=3500)
+train_classifier = CNNEmbeddedVecClassifier(classdict,maxlen=2000)
 train_classifier.train()
-#train_classifier.savemodel("D:/TRAINCNN.txt")
-#trainclassifier trained for 3500, trainclassifier1 trained for 2000 - all only on test data
 Prediction=train_classifier.predict(testing,False)
 acc=sum(Prediction==testing_tags)/len(Prediction)
 print('Accuracy is '+str(acc))
